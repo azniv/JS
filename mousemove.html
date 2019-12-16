@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Click me!</title>
+</head>
+<body>
+    
+    
+    <h2 id="title">Click me!</h2>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" ></script>
+    <script>
+
+        let leftOffset = 0;  // move horizontal 
+        let topOffset = 0;   // move vertical
+        let direction = "right";   // dir select 
+        let intervalID;            // to stop the animation
+        let clickOnTitle = 0;      // number of click
+        let animationSpeed=50;
+
+
+        //move h1
+        let moveTitle = function () {$("#title").offset({
+            left: leftOffset,
+            top: topOffset
+        });
+
+        // dir selection
+             //right
+        if(direction == "right")    
+            leftOffset++;
+            //left
+        else
+            leftOffset--;
+            //down
+        if(leftOffset < 0 && topOffset > 0) {
+            leftOffset = 0;
+            topOffset--;
+        }
+        else if(topOffset == 0) {
+            direction = "right";
+        }
+
+        //down
+        if (leftOffset > 200) {
+            leftOffset = 200;
+
+            topOffset++;
+            if (topOffset > 200) {
+                topOffset = 200;
+                direction = "left";
+            }
+            else 
+            if(topOffset < 0) {
+                topOffset =0;
+            }
+        } 
+        };
+
+        $("#title").click(function(){
+            clickOnTitle++;
+            animationSpeed*=0.9;
+            $('#title').text(clickOnTitle);
+            if(clickOnTitle ==10){
+                clickOnTitle=0;
+                $('#title').text('You win!');
+                clearInterval(intervalID);
+                
+
+            }
+        });
+        intervalID =  setInterval(moveTitle, animationSpeed); 
+
+        
+        /*
+
+        // Task №3
+        
+        intervalID =  setInterval(moveTitle, 10);      
+        $("#title").click(function(){
+            clearInterval(intervalID);
+        });
+        */
+
+
+
+        /*
+       $("html").click(function(event){
+        $("#heading").offset({
+            left: event.pageX,
+            top: event.pageY
+        });
+       });*/
+    </script>
+</body>
+</html>
