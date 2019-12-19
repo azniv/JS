@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Гонки</title>
+</head>
+<body>
+
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	
+	<script>
+		var Car = function(x, y){
+			this.x = x;
+			this.y = y;
+			var carHtml = '<img src="https://find-toy.xyz/image/1/53860835_0.jpg">';
+			this.carELement = $(carHtml);
+			this.carELement.css({
+				position: "absolute",
+				left: this.x,
+				top: this.y
+			});
+			$("body").append(this.carELement);
+		}
+		
+
+		Car.prototype.moveRight = function(speed){
+			this.x+=speed;
+			this.carELement.css({
+				left: this.x,
+				top: this.y
+			});
+			
+		}
+		
+		Car.prototype.moveLeft = function(speed){
+			this.x-=speed;
+			this.carELement.css({
+				left: this.x,
+				top: this.y
+			});
+		}
+		
+		Car.prototype.moveUp = function(speed){
+			this.y-=speed;
+			this.carELement.css({
+				left: this.x,
+				top: this.y
+			});
+		}
+		
+		Car.prototype.moveDown = function(speed){
+			this.y+=speed;
+			this.carELement.css({
+				left: this.x,
+				top: this.y
+			});
+		}
+		let tesla = new Car(20,20);
+		let nissan = new Car(20,400);
+		
+
+		var timerId = setInterval(() =>tesla.moveRight(Math.floor(Math.random() * 10)), 30);
+		var timer = setInterval(() => nissan.moveRight(Math.floor(Math.random() * 10)), 30);
+		
+	</script>
+</body>
+</html>
