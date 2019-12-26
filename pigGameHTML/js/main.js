@@ -8,6 +8,8 @@ GAME RULES:
 */
 
 var scores, roundScore, activePlayer, gamePlaying;
+var player1Name;
+var player2Name;
 
 init();
 
@@ -23,9 +25,17 @@ function init() {
 	document.getElementById('score-1').textContent = '0';
 	document.getElementById('current-0').textContent = '0';
 	document.getElementById('current-1').textContent = '0';
+	$(document).ready(function(){
+		$('.welcome').delay(3000).fadeOut(2000);
+		$('.input-data').delay(5000).fadeIn(2000);
+		
+	});
+	
+	//player1Name = prompt("Player 1, What is your name?");
+	//player2Name = prompt("Player 2, what is your name?");
 
-	document.getElementById('name-0').textContent = 'Player 1';
-	document.getElementById('name-1').textContent = 'Player 2';
+	//document.getElementById('name-0').textContent = player1Name;
+	//document.getElementById('name-1').textContent = player2Name;
 
 	document.querySelector('.player-0-panel').classList.remove('winner');
 	document.querySelector('.player-1-panel').classList.remove('winner');	
