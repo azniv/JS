@@ -16,7 +16,8 @@
 }
 
 body {
-    background-image: linear-gradient(rgba(62, 20, 20, 0.4), rgba(62, 20, 20, 0.4)), url(../img/back.jpg);
+ 
+    background-image: linear-gradient(rgba(62, 20, 20, 0.4), rgba(62, 20, 20, 0.4)), url(../img/backgroud.png);
     background-size: cover;
     background-position: center;
     font-family: Lato;
@@ -35,15 +36,15 @@ body {
     background-color: #fff;
     box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
     overflow: hidden;
+    background-color: rgba(16, 21, 46, 0.6);
 }
 .main-game{
     display: none;
 }
-.input{
+.input {
     height: 600px;
-    width: 900px;
-    
-
+    width: 1000px;
+    color:white;    
 }
 
 .input-data{
@@ -68,9 +69,7 @@ body {
     position: relative;
 }
 .player1-name__input{
-    position: relative;
-    top: 50%;
-    left: 35%;
+
 }
 
 .player-0-panel,

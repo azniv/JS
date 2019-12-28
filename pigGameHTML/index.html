@@ -1,85 +1,102 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
-    <head>
-        <meta charset="UTF-8">
-        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,600" rel="stylesheet" type="text/css">
-        <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
-        <link type="text/css" rel="stylesheet" href="css/style.css">
-        
-        <title>Pig Game</title>
-    </head>
-
-    <body>
-        
-
-        
-        <div class="wrapper clearfix">
-            
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,600" rel="stylesheet" type="text/css">
+    <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
+    <link type="text/css" rel="stylesheet" href="css/style.css">
 
 
-            <div class="input">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Pig Game</title>
+</head>
+
+<body>
+
+
+
+    <div class="wrapper clearfix">
+
+
+
+        <div class="input">
+            <div class="container">
                 <div class="welcome"> Добро пожаловать в игру "Кости судьбы"</div>
-                <div class="input-data"> Введите, пожалуйста, данные</div>
-                <div> Имя 1го игрока</div>
-                <input class="player1-name__input" type="text">
-                <input class="player2-name__input " type="text">
-                <button >DONE</button>
+                <div class="input-data"> Введите данные</div>
+           
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <label for="player1-name">Имя 1го игрока</label>
+                          <input type="text"  class="form-control player1-name" id="player1-name">
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label for="player2-name">Имя 2го игрока</label>
+                          <input type="text"   class="form-control player2-name" id="player2-name">
+                        </div>
+                      </div>
+                   
+                      <button type="button" class="btn btn-light done" >DONE</button>
+              
             </div>
-            <div class="main-game">
-
-
-
            
            
-                <div class="player-0-panel active">
-                    <div class="player-name" id="name-0">Player 1</div>
-                    <div class="player-score" id="score-0">43</div>
-                    <div class="player-current-box">
-                        <div class="player-current-label">Current</div>
-                        <div class="player-current-score" id="current-0">11</div>
-                    </div>
-                </div>
-                
-                <div class="player-1-panel">
-                    <div class="player-name" id="name-1">Player 2</div>
-                    <div class="player-score" id="score-1">72</div>
-                    <div class="player-current-box">
-                        <div class="player-current-label">Current</div>
-                        <div class="player-current-score" id="current-1">0</div>
-                    </div>
-                </div>
-                
-                <button class="btn-new"><i class="ion-ios-plus-outline"></i>New game</button>
-                <button class="btn-roll"><i class="ion-ios-loop"></i>Roll dice</button>
-                <button class="btn-hold"><i class="ion-ios-download-outline"></i>Hold</button>
-                <button class="btn-ruls"><i class="ion-ios-book"></i>Ruls</button>
-                
             
-                <img src="img/dice-5.png" alt="Dice" class="dice">
-            </div> 
+            
         </div>
-        <div id="ruls-popup" class="ruls-modal">
+        <div class="main-game">
 
-            
-                ПРАВИЛА ИГРЫ:
+            <div class="player-0-panel active">
+                <div class="player-name" id="name-0">Player 1</div>
+                <div class="player-score" id="score-0">43</div>
+                <div class="player-current-box">
+                    <div class="player-current-label">Current</div>
+                    <div class="player-current-score" id="current-0">11</div>
+                </div>
+            </div>
 
-                <br>
-                - В игре 2 игрока, играющих в раундах
-                <br>
-                - В каждом ходу игрок бросает кости столько раз, сколько он желает. Каждый результат добавляется к его раунду
-                <br>
-                - НО, если игрок бросает 1, все его результаты раунда теряются. После этого очередь следующего игрока
-                <br>
-                - Игрок может выбрать «Удерживать», что означает, что его счет КРУГЛЫХ будет добавлен к его счету ГЛБАЛ. После этого очередь следующего игрока
-               <br>
-                - Первый игрок, набравший 100 очков по ГЛОБАЛЬНОМУ счету, выигрывает игру`
-              	     
-              <div class="close-popup">&times;</div>
-     
-          </div> <!-- /ruls-popup -->  
+            <div class="player-1-panel">
+                <div class="player-name" id="name-1">Player 2</div>
+                <div class="player-score" id="score-1">72</div>
+                <div class="player-current-box">
+                    <div class="player-current-label">Current</div>
+                    <div class="player-current-score" id="current-1">0</div>
+                </div>
+            </div>
 
-        
-        <script src="js/jquery-3.4.1.min.js"> </script>
-        <script src="js/main.js"></script>
-    </body>
+            <button class="btn-new"><i class="ion-ios-plus-outline"></i>New game</button>
+            <button class="btn-roll"><i class="ion-ios-loop"></i>Roll dice</button>
+            <button class="btn-hold"><i class="ion-ios-download-outline"></i>Hold</button>
+            <button class="btn-ruls"><i class="ion-ios-book"></i>Ruls</button>
+
+
+            <img src="img/dice-5.png" alt="Dice" class="dice">
+        </div>
+    </div>
+    <div id="ruls-popup" class="ruls-modal">
+
+
+        ПРАВИЛА ИГРЫ:
+
+        <br>
+        - В игре 2 игрока, играющих в раундах
+        <br>
+        - В каждом ходу игрок бросает кости столько раз, сколько он желает. Каждый результат добавляется к его раунду
+        <br>
+        - НО, если игрок бросает 1, все его результаты раунда теряются. После этого очередь следующего игрока
+        <br>
+        - Игрок может выбрать «Удерживать», что означает, что его счет КРУГЛЫХ будет добавлен к его счету ГЛБАЛ. После этого очередь следующего игрока
+        <br>
+        - Первый игрок, набравший 100 очков по ГЛОБАЛЬНОМУ счету, выигрывает игру`
+
+        <div class="close-popup">&times;</div>
+
+    </div> <!-- /ruls-popup -->
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
 </html>

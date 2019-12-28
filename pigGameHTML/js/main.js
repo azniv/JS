@@ -26,16 +26,18 @@ function init() {
 	document.getElementById('current-0').textContent = '0';
 	document.getElementById('current-1').textContent = '0';
 	$(document).ready(function(){
-		$('.welcome').delay(3000).fadeOut(2000);
-		$('.input-data').delay(5000).fadeIn(2000);
+		$('.welcome').delay(2000).fadeOut(2000);
+		$('.input-data').delay(4000).fadeIn(2000);
 		
 	});
 	
-	//player1Name = prompt("Player 1, What is your name?");
-	//player2Name = prompt("Player 2, what is your name?");
 
-	//document.getElementById('name-0').textContent = player1Name;
-	//document.getElementById('name-1').textContent = player2Name;
+
+	//player1Name =  	$('.player1-name__input.value').val();
+	//player2Name =  	$('.player2-name__input.value').val();
+	//player2Name = player2-name__input.value;
+	
+
 
 	document.querySelector('.player-0-panel').classList.remove('winner');
 	document.querySelector('.player-1-panel').classList.remove('winner');	
@@ -64,7 +66,7 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
 	if (gamePlaying) {
 		// Random number
 		var dice = Math.floor(Math.random() * 6) + 1;
-		// Display the resunl
+		// Display the result
 		var diceDOM = document.querySelector('.dice');
 		document.querySelector('#current-' + activePlayer).textContent;
 		diceDOM.style.display = 'block';
@@ -119,3 +121,23 @@ $(document).ready(function(){
 		$('#ruls-popup').fadeOut(2000);
 	});
 });
+
+$(document).ready(function(){
+	$('.done').on("click", function(){
+		
+		player1Name = $(".player1-name").val();
+		
+		player2Name = $(".player2-name").val();
+   
+	   // $('#text').attr('value');
+	   $('.input').hide();
+	   document.getElementById('name-0').textContent = player1Name;
+	   document.getElementById('name-1').textContent = player2Name;
+   
+	   console.log(player1Name);
+	   console.log(player2Name);
+		$('.main-game').show();
+	});
+	
+});
+
